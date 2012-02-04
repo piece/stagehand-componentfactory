@@ -44,7 +44,7 @@ namespace Stagehand\ComponentFactory;
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-abstract class ComponentAwareFactory implements IComponentAwareFactory
+class ComponentAwareFactory implements IComponentAwareFactory
 {
     /**
      * @var \Stagehand\ComponentFactory\ComponentFactory

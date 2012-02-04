@@ -46,7 +46,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-abstract class ComponentFactory
+class ComponentFactory
 {
     /**
      * @var \Symfony\Component\DependencyInjection\ContainerInterface
