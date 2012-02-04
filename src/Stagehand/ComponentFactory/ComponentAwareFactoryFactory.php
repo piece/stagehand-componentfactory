@@ -52,7 +52,7 @@ class ComponentAwareFactoryFactory
     protected $factoryClass;
 
     /**
-     * @var \Stagehand\ComponentFactory\ComponentFactory
+     * @var \Stagehand\ComponentFactory\IComponentFactory
      */
     protected $componentFactory;
 
@@ -83,9 +83,9 @@ class ComponentAwareFactoryFactory
     }
 
     /**
-     * @param \Stagehand\ComponentFactory\ComponentFactory $componentFactory
+     * @param \Stagehand\ComponentFactory\IComponentFactory $componentFactory
      */
-    public function setComponentFactory(ComponentFactory $componentFactory)
+    public function setComponentFactory(IComponentFactory $componentFactory)
     {
         $this->componentFactory = $componentFactory;
     }

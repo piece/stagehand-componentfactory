@@ -47,7 +47,7 @@ namespace Stagehand\ComponentFactory;
 class ComponentAwareFactory implements IComponentAwareFactory
 {
     /**
-     * @var \Stagehand\ComponentFactory\ComponentFactory
+     * @var \Stagehand\ComponentFactory\IComponentFactory
      */
     protected $componentFactory;
 
@@ -56,7 +56,7 @@ class ComponentAwareFactory implements IComponentAwareFactory
      */
     protected $componentID;
 
-    public function setComponentFactory(ComponentFactory $componentFactory)
+    public function setComponentFactory(IComponentFactory $componentFactory)
     {
         $this->componentFactory = $componentFactory;
     }

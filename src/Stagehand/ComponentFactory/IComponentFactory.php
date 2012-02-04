@@ -37,6 +37,8 @@
 
 namespace Stagehand\ComponentFactory;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 /**
  * @package    Stagehand_ComponentFactory
  * @copyright  2012 KUBO Atsuhiro <kubo@iteman.jp>
@@ -44,22 +46,24 @@ namespace Stagehand\ComponentFactory;
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-interface IComponentAwareFactory
+interface IComponentFactory
 {
     /**
-     * @param \Stagehand\ComponentFactory\IComponentFactory $componentFactory
+     * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
      */
-    public function setComponentFactory(IComponentFactory $componentFactory);
+    public function setContainer(ContainerInterface $container);
 
     /**
      * @param string $componentID
-     */
-    public function setComponentID($componentID);
-
-    /**
      * @return mixed
      */
-    public function create();
+    public function create($componentID);
+
+    /**
+     * @param string $componentID
+     * @param mixed $component
+     */
+    public function set($componentID, $component);
 }
 
 /*

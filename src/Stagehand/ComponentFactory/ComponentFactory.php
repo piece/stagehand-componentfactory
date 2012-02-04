@@ -46,34 +46,23 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class ComponentFactory
+class ComponentFactory implements IComponentFactory
 {
     /**
      * @var \Symfony\Component\DependencyInjection\ContainerInterface
      */
     protected $container;
 
-    /**
-     * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-     */
     public function setContainer(ContainerInterface $container)
     {
         $this->container = $container;
     }
 
-    /**
-     * @param string $componentID
-     * @return mixed
-     */
     public function create($componentID)
     {
         return $this->container->get($this->resolveComponentID($componentID));
     }
 
-    /**
-     * @param string $componentID
-     * @param mixed $component
-     */
     public function set($componentID, $component)
     {
         $this->container->set($this->resolveComponentID($componentID), $component);
