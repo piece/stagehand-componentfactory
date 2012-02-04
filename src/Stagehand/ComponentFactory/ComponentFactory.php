@@ -56,6 +56,7 @@ class ComponentFactory implements IComponentFactory
     public function setContainer(ContainerInterface $container)
     {
         $this->container = $container;
+        $this->set('component_factory', $this);
     }
 
     public function create($componentID)
