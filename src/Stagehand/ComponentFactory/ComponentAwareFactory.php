@@ -75,7 +75,10 @@ abstract class ComponentAwareFactory implements IComponentAwareFactory
      * @param string $componentID
      * @return string
      */
-    abstract protected function resolveComponentID($componentID);
+    protected function resolveComponentID($componentID)
+    {
+        return $componentID;
+    }
 }
 
 /*
