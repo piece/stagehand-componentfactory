@@ -48,6 +48,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 interface IComponentFactory
 {
+    const SERVICE_ID = 'component_factory';
+
     /**
      * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
      */
