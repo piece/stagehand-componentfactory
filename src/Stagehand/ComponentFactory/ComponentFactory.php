@@ -56,7 +56,15 @@ class ComponentFactory implements IComponentFactory
     public function setContainer(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->set(IComponentFactory::SERVICE_ID, $this);
+        $this->prepareSyntheticServices();
+    }
+
+    /**
+     * @return \Symfony\Component\DependencyInjection\ContainerInterface
+     */
+    public function getContainer()
+    {
+        return $this->container;
     }
 
     public function create($componentID)
@@ -69,6 +77,19 @@ class ComponentFactory implements IComponentFactory
         $this->container->set($this->resolveComponentID($componentID), $component);
     }
 
+    public function clearComponents()
+    {
+        $containerClass = new \ReflectionObject($this->container);
+        foreach (array('services', 'scopedServices', 'loading') as $clearingPropertyName) {
+            $clearingProperty = $containerClass->getProperty($clearingPropertyName);
+            $clearingProperty->setAccessible(true);
+            $clearingProperty->setValue($this->container, array());
+            $clearingProperty->setAccessible(false);
+        }
+
+        $this->prepareSyntheticServices();
+    }
+
     /**
      * @param string $componentID
      * @return string
@@ -76,6 +97,12 @@ class ComponentFactory implements IComponentFactory
     protected function resolveComponentID($componentID)
     {
         return $componentID;
+    }
+
+    protected function prepareSyntheticServices()
+    {
+        $this->container->set('service_container', $this->container);
+        $this->set(IComponentFactory::SERVICE_ID, $this);
     }
 }
 
