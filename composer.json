@@ -4,6 +4,7 @@
     "description": "A component factory with the Symfony DependencyInjection component",
     "keywords": ["dependency injection"],
     "homepage": "http://redmine.piece-framework.com/projects/stagehand-componentfactory",
+    "version": "1.0.0",
     "license": "New BSD License",
     "authors": [
         {
