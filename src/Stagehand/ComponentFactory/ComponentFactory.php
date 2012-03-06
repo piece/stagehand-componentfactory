@@ -37,6 +37,7 @@
 
 namespace Stagehand\ComponentFactory;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -52,6 +53,16 @@ class ComponentFactory implements IComponentFactory
      * @var \Symfony\Component\DependencyInjection\ContainerInterface
      */
     protected $container;
+
+    /**
+     * @var array
+     */
+    protected $definitions = array();
+
+    /**
+     * @var array
+     */
+    protected $aliases = array();
 
     public function setContainer(ContainerInterface $container)
     {
@@ -74,11 +85,34 @@ class ComponentFactory implements IComponentFactory
 
     public function set($componentID, $component)
     {
-        $this->container->set($this->resolveComponentID($componentID), $component);
+        $serviceID = $this->resolveComponentID($componentID);
+
+        if ($this->container instanceof ContainerBuilder) {
+            if ($this->container->hasDefinition($serviceID)) {
+                $this->definitions[$serviceID] = $this->container->getDefinition($serviceID);
+            }
+            if ($this->container->hasAlias($serviceID)) {
+                $this->aliases[$serviceID] = $this->container->getAlias($serviceID);
+            }
+        }
+
+        $this->container->set($serviceID, $component);
     }
 
     public function clearComponents()
     {
+        if ($this->container instanceof ContainerBuilder) {
+            foreach ($this->definitions as $id => $definition) {
+                $this->container->setDefinition($id, $definition);
+            }
+            foreach ($this->aliases as $alias => $id) {
+                $this->container->setAlias($alias, $id);
+            }
+
+            $this->definitions = array();
+            $this->aliases = array();
+        }
+
         $containerClass = new \ReflectionObject($this->container);
         foreach (array('services', 'scopedServices', 'loading') as $clearingPropertyName) {
             $clearingProperty = $containerClass->getProperty($clearingPropertyName);
