@@ -78,14 +78,23 @@ class ComponentFactory implements IComponentFactory
         return $this->container;
     }
 
-    public function create($componentID)
+    /**
+     * @param string $componentID
+     * @param boolean $external
+     */
+    public function create($componentID, $external = false)
     {
-        return $this->container->get($this->resolveComponentID($componentID));
+        return $this->container->get($this->resolveServiceID($componentID, $external));
     }
 
-    public function set($componentID, $component)
+    /**
+     * @param string $componentID
+     * @param mixed $component
+     * @param boolean $external
+     */
+    public function set($componentID, $component, $external = false)
     {
-        $serviceID = $this->resolveComponentID($componentID);
+        $serviceID = $this->resolveServiceID($componentID, $external);
 
         if ($this->container instanceof ContainerBuilder) {
             if ($this->container->hasDefinition($serviceID)) {
@@ -126,6 +135,16 @@ class ComponentFactory implements IComponentFactory
 
     /**
      * @param string $componentID
+     * @param boolean $external
+     * @return string
+     */
+    protected function resolveServiceID($componentID, $external)
+    {
+        return $external ? $componentID : $this->resolveComponentID($componentID);
+    }
+
+    /**
+     * @param string $componentID
      * @return string
      */
     protected function resolveComponentID($componentID)
@@ -135,7 +154,7 @@ class ComponentFactory implements IComponentFactory
 
     protected function prepareSyntheticServices()
     {
-        $this->container->set('service_container', $this->container);
+        $this->set('service_container', $this->container, false);
         $this->set(IComponentFactory::SERVICE_ID, $this);
     }
 }
