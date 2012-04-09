@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Stagehand_ComponentFactory</name>
+ <channel>pear.piece-framework.com</channel>
+ <summary>A component factory with the Symfony DependencyInjection component</summary>
+ <description>Stagehand_ComponentFactory provides an object factory based on the Symfony DependencyInjection component. It helps developers build their own object factory frameworks.</description>
+ <lead>
+  <name>KUBO Atsuhiro</name>
+  <user>iteman</user>
+  <email>kubo@iteman.jp</email>
+  <active>yes</active>
+ </lead>
+ <date>2012-04-09</date>
+ <time>19:14:16</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>
+This is the first release of Stagehand_ComponentFactory.
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="da22d4cd5525a7cfebc589f57bc4d5f1" name="doc/LICENSE" role="doc" />
+   <file baseinstalldir="/" md5sum="2bc3bec388e80a3c83583c7c5b792acf" name="Stagehand/ComponentFactory/Compiler.php" role="php" />
+   <file baseinstalldir="/" md5sum="bd65a691586b9084b0994d023cdb71f8" name="Stagehand/ComponentFactory/ComponentAwareFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="4926a4946ad5098ebe7ca61c3c8832b3" name="Stagehand/ComponentFactory/ComponentAwareFactoryFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="a4abdaf84468d3a58ac2a07141ae9e8f" name="Stagehand/ComponentFactory/ComponentFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="1c52495b540e65f740e32b6e6422cb3a" name="Stagehand/ComponentFactory/IComponentAwareFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="8bd913c6b847d950c31677434e2e4659" name="Stagehand/ComponentFactory/IComponentFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="1cffd8086c6ccbf5498b58c5a1847230" name="Stagehand/ComponentFactory/UnfreezableContainerBuilder.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.2</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>DependencyInjection</name>
+    <channel>pear.symfony.com</channel>
+    <min>2.0.0</min>
+   </package>
+   <extension>
+    <name>pcre</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-04-09</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+This is the first release of Stagehand_ComponentFactory.
+   </notes>
+  </release>
+ </changelog>
+</package>
