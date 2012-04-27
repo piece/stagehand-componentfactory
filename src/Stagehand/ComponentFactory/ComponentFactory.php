@@ -83,7 +83,7 @@ class ComponentFactory implements IComponentFactory
      */
     public function set($componentID, $component, $external = false)
     {
-        $this->container->set($this->resolveComponentID($componentID), $component);
+        $this->container->set($this->resolveServiceID($componentID, $external), $component);
     }
 
     public function clearComponents()
