@@ -13,10 +13,10 @@
   <email>kubo@iteman.jp</email>
   <active>yes</active>
  </lead>
- <date>2012-04-09</date>
- <time>19:14:16</time>
+ <date>2012-05-03</date>
+ <time>17:19:45</time>
  <version>
-  <release>1.0.0</release>
+  <release>1.0.1</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -25,18 +25,24 @@
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
  <notes>
-This is the first release of Stagehand_ComponentFactory.
+What&apos;s New in Stagehand_ComponentFactory 1.0.1
+
+A Defect Fix
+
+ The following defect has been fixed:
+
+ * An object that is given to the ComponentFactory::set() method is treated as an internal component. (Issue #395)
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="da22d4cd5525a7cfebc589f57bc4d5f1" name="doc/LICENSE" role="doc" />
-   <file baseinstalldir="/" md5sum="2bc3bec388e80a3c83583c7c5b792acf" name="Stagehand/ComponentFactory/Compiler.php" role="php" />
-   <file baseinstalldir="/" md5sum="bd65a691586b9084b0994d023cdb71f8" name="Stagehand/ComponentFactory/ComponentAwareFactory.php" role="php" />
-   <file baseinstalldir="/" md5sum="4926a4946ad5098ebe7ca61c3c8832b3" name="Stagehand/ComponentFactory/ComponentAwareFactoryFactory.php" role="php" />
-   <file baseinstalldir="/" md5sum="a4abdaf84468d3a58ac2a07141ae9e8f" name="Stagehand/ComponentFactory/ComponentFactory.php" role="php" />
-   <file baseinstalldir="/" md5sum="1c52495b540e65f740e32b6e6422cb3a" name="Stagehand/ComponentFactory/IComponentAwareFactory.php" role="php" />
-   <file baseinstalldir="/" md5sum="8bd913c6b847d950c31677434e2e4659" name="Stagehand/ComponentFactory/IComponentFactory.php" role="php" />
-   <file baseinstalldir="/" md5sum="1cffd8086c6ccbf5498b58c5a1847230" name="Stagehand/ComponentFactory/UnfreezableContainerBuilder.php" role="php" />
+   <file baseinstalldir="/" md5sum="fe7d0caa205c959a1997e4f1fe187b74" name="Stagehand/ComponentFactory/Compiler.php" role="php" />
+   <file baseinstalldir="/" md5sum="8428be214e3537ba9787b8b9dfb07f70" name="Stagehand/ComponentFactory/ComponentAwareFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="c592fbac7c6528299bfbb2559b1deb90" name="Stagehand/ComponentFactory/ComponentAwareFactoryFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="544a12212a79bedf846261763c2ac7d9" name="Stagehand/ComponentFactory/ComponentFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="13f693814917aa47a1b70b6687704bb0" name="Stagehand/ComponentFactory/IComponentAwareFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="befc7914d7dcd52e9d17c8ee75f9977f" name="Stagehand/ComponentFactory/IComponentFactory.php" role="php" />
+   <file baseinstalldir="/" md5sum="351a8d236b6d65b3bf9e27a37908a136" name="Stagehand/ComponentFactory/UnfreezableContainerBuilder.php" role="php" />
   </dir>
  </contents>
  <dependencies>
@@ -72,6 +78,27 @@ This is the first release of Stagehand_ComponentFactory.
    <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
    <notes>
 This is the first release of Stagehand_ComponentFactory.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-05-03</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+What&apos;s New in Stagehand_ComponentFactory 1.0.1
+
+A Defect Fix
+
+ The following defect has been fixed:
+
+ * An object that is given to the ComponentFactory::set() method is treated as an internal component. (Issue #395)
    </notes>
   </release>
  </changelog>
