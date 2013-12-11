@@ -120,7 +120,7 @@ class ComponentFactory implements IComponentFactory
 
     protected function prepareSyntheticServices()
     {
-        $this->set('service_container', $this->container, false);
+        $this->set('service_container', $this->container, true);
         $this->set(IComponentFactory::SERVICE_ID, $this, true);
         $this->set(IComponentFactory::SERVICE_ID, $this, false);
     }
